@@ -1,0 +1,13 @@
+# Crate Configuration
+
+# Data Paths
+path:
+  logs: /data/log
+  data: /data/data
+  blobs: /data/blobs
+
+# Cluster name
+cluster.name: docker-crate
+
+# Mode
+node.master: false

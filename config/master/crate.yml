@@ -1,0 +1,24 @@
+# Crate Configuration
+
+# Data Paths
+path:
+  logs: /data/log
+  data: /data/data
+  blobs: /data/blobs
+
+# Cluster name
+cluster.name: docker-crate
+
+# Mode
+node.master: true
+
+# Master & Nodes quorum
+
+### Limit to 1 master..
+discovery.zen.minimum_master_nodes: 1
+
+### Default = 2. If you need to scale more than one data node must increase this value by 1 per every node.
+gateway.expected_nodes: 2
+
+### Minimum exepecter nodes before starting a revovery.
+gateway.recover_after_nodes: 2

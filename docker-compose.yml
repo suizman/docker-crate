@@ -1,0 +1,21 @@
+# Docker Compose syntax version
+version: '2'
+
+# Services list
+services:
+  master:
+    image: crate:latest
+    ports:
+      # Access WebUI via http://localhost:4200/admin
+      - "4200:4200"
+      - "4300:4300"
+    volumes:
+      - ${PWD}/config/master:/crate/config:ro
+    environment:
+      CRATE_HEAP_SIZE: 1g
+  node:
+    image: crate:latest
+    volumes:
+      - ${PWD}/config/node:/crate/config:ro
+    environment:
+      CRATE_HEAP_SIZE: 1g
